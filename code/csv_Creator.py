@@ -1,6 +1,5 @@
 import csv
 import time
-import os
 from datetime import datetime
 import random
 
@@ -8,7 +7,7 @@ header = ['TIMESTAMP', 'Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'is_motio
 
 # os.remove('fixed2.csv')
 
-with open('fixed2.csv', 'a') as t:
+with open('csv/fixed2.csv', 'a') as t:
     writer = csv.writer(t)
     writer.writerow(header)
     for seconds in range(10000):

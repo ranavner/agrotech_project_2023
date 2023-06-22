@@ -12,8 +12,8 @@ from datetime import datetime
 READ_API_KEY = 'UMOB8GG4SVBVXTHA'
 CHANNEL_ID = '2076230'
 #   _______________________________________________________________________________________________________
-streamlit_script = 'GUI_test_placeholder.py'
-sensors_csv = 'sensors_csv_' + str(datetime.now()) + '.csv'     # creating a csv with the current timestamp as filename
+streamlit_script = 'code/streamlit_app.py'
+sensors_csv = '/Users/ranavner/Desktop/Studies/Second Year/Agrotech/agrotech_project_2023/csv/sensors_csv_' + str(datetime.now()) + '.csv'     # creating a csv with the current timestamp as filename
 sensors_header = ['TIMESTAMP', 'Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'is_motion', 'tmp', 'vpd']
 placeholder = st.empty()
 #   _______________________________________________________________________________________________________
