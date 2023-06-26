@@ -11,7 +11,7 @@ with open('csv/fixed2.csv', 'a') as t:
     writer = csv.writer(t)
     writer.writerow(header)
     for seconds in range(10000):
-        data = [datetime.now(), random.randint(1,100), random.randint(1,100), random.randint(1,100), random.randint(1,100), random.randint(0, 1), random.randint(1,45), random.randint(0, 5)]
+        data = [datetime.now(), random.randint(60.1,70), random.randint(60.1,70), random.randint(60.1,70), random.randint(60.1,70), random.randint(0, 1), random.randint(27.1,27.5), random.randint(1.1, 1.3)]
         writer.writerow(data)
         t.flush()
 
