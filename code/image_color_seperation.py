@@ -20,7 +20,7 @@ def detect_color_difference(image):
 
     # Define the color range you want to detect (here we use red as an example)
     lower_color = np.array([22, 93, 0])
-    upper_color = np.array([45, 255, 255])
+    upper_color = np.array([28, 255, 255])
 
     # Create a mask for pixels within the color range
     mask = cv2.inRange(hsv_image, lower_color, upper_color)
@@ -37,7 +37,7 @@ def detect_color_difference(image):
         (x, y), radius = cv2.minEnclosingCircle(contour)
         center = (int(x), int(y))
         radius = int(radius)
-        cv2.circle(image, center, radius, (0, 0, 255), 10)
+        cv2.circle(image, center, radius, (0, 0, 255), 5)
 
     return image
 

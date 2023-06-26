@@ -11,7 +11,7 @@ valve_threshold = 60
 #   _______________________________________________________________________________________________________
 
 try:
-    path_to_image_directory = glob.glob('ESP32-CAM/*')
+    path_to_image_directory = glob.glob('images/ESP32-CAM/*')
     latest_image_directory = glob.glob(max(path_to_image_directory, key=os.path.getctime))[0]
     path_to_image = glob.glob(latest_image_directory + '/*')
     image_now = glob.glob(max(path_to_image, key=os.path.getctime))[0]
