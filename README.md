@@ -18,4 +18,4 @@ All the data is sent real-time into a streamlit app that can be accessed from al
   src="/images/for_readme/IMG_6594.jpg"
   alt="Alt text"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 200px">
