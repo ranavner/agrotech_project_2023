@@ -25,7 +25,7 @@ The app platform was created using the Streamlit library, full code can be found
 !['alt text'](/images/for_readme/IMG_6625.jpg)
 
 The self irrigation system is opperated by one ESP32, it is connected to 4 moisture sensors and 4 valves, and 1 sensor + RH sensor.
-Full code can be found in code/irrigation_esp.ino
+Full code can be found in [some label](code/irrigation_esp.ino)
 
 ## Moisture sensors
 
