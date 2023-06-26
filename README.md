@@ -19,13 +19,18 @@ All the data is sent real-time into a streamlit app that can be accessed from al
 ## Dashboard presentation
 !['alt text'](/images/for_readme/GUI1.png)
 
-The app platform was created using the Streamlit library, full code can be found in the code/streamlit_app.py
+The app platform was created using the Streamlit library, full code can be found in [here](code/streamlit_app.py)
 
 ## Full system
 !['alt text'](/images/for_readme/IMG_6625.jpg)
 
 The self irrigation system is opperated by one ESP32, it is connected to 4 moisture sensors and 4 valves, and 1 sensor + RH sensor.
-Full code can be found in [some label](code/irrigation_esp.ino)
+Full code can be found in [here](code/irrigation_esp.ino)
+
+## Camera and Motion sensor
+!['alt text']()
+
+The camera module and the motion sensor are operated by 2 different esp, code for camera module can be found [here](code/ESP32_CAM_Send_Photo_to_Google_Drive.ino) and code for the motion sensor esp can be found [here](code/Motion_Sensor.ino)
 
 ## Moisture sensors
 
