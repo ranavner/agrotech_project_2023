@@ -14,4 +14,4 @@ All the data is sent real-time into a streamlit app that can be accessed from al
 5. Motion alert
 6. Last photo taken (5 minutes intervals)
 7. Analyzed photo (showing yellow areas that require special attention)
-!['alt text'](/images/for_readme/IMG_6594.jpg)
+(/images/for_readme/IMG_6594.jpg)
