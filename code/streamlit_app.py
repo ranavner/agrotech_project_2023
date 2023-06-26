@@ -200,8 +200,12 @@ def main():
         tmp_graph.line_chart(sensors_df4, x='TIMESTAMP', y='tmp')
         VPD_graph.line_chart(sensors_df4, x='TIMESTAMP', y='vpd')
 
-        image_raw.image(image_now, width=720)
-        image_ana.image(ana_image, width=720)
+        try:
+            image_raw.image(image_now, width=720)
+            image_ana.image(ana_image, width=720)
+        except:
+            image_raw.write('no image to show')
+            image_ana.write('no image to show')
         # try:
         #     image_container.image(image_now, width=720)
         # except:
@@ -222,8 +226,8 @@ def main():
 
     def define_data_frames():
         global sensors_df, sensors_df2, sensors_df3, sensors_df4, sensors_df5, motion_df, motion_last_seen, valve_df, csv_for_download
-        sensors_df = pd.read_csv((sensors_csv))
-        # sensors_df = pd.read_csv('fixed2.csv')
+        # sensors_df = pd.read_csv((sensors_csv))
+        sensors_df = pd.read_csv('csv/fixed2.csv')
         csv_for_download = convert_sensors_df(sensors_df)
         sensors_df2 = sensors_df.drop(columns=['is_motion'])
         sensors_df3 = sensors_df2.dropna()
