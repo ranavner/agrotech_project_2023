@@ -8,17 +8,24 @@ Also, a motion sensor is located above the crops so it can notify the user of an
 All the data is sent real-time into a streamlit app that can be accessed from all over the world.
 ## The app includes: 
 1. Humidity values
-2. Valve status
+2. Valve status (open or close)
 3. Temperture
 4. VPD 
 5. Motion alert
-6. Last photo taken (5 minutes intervals)
-7. Analyzed photo (showing yellow areas that require special attention)
+6. Photo of the field (5 minutes intervals)
+7. Analyzed photo (showing yellow areas that may require special attention)
+8. Full raw data for self user analysis
+
 ## Dashboard presentation
 !['alt text'](/images/for_readme/GUI1.png)
 
+The app platform was created using the Streamlit library, full code can be found in the code/streamlit_app.py
+
 ## Full system
 !['alt text'](/images/for_readme/IMG_6625.jpg)
+
+The self irrigation system is opperated by one ESP32, it is connected to 4 moisture sensors and 4 valves, and 1 sensor + RH sensor.
+Full code can be found in code/irrigation_esp.ino
 
 ## Moisture sensors
 

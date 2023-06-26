@@ -7,13 +7,13 @@ def download_image_repository_from_drive():
     gdown.download_folder(url,output='images/', quiet=True, use_cookies=False)
 
 def analyze_image():
-    subprocess.Popen(["python", "image_color_seperation.py"])
+    subprocess.Popen(["python", "code/image_color_seperation.py"])
 
 
 def main():
     download_image_repository_from_drive()
     analyze_image()
-    time.sleep(600)
+    time.sleep(300)
 
 if __name__ == "__main__":
     main()
