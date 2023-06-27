@@ -14,7 +14,8 @@ All the data is sent real-time into a streamlit app that can be accessed from al
 5. Motion alert
 6. Photo of the field (5 minutes intervals)
 7. Analyzed photo (showing yellow areas that may require special attention)
-8. Full raw data for self user analysis
+8. Timelapse video of the growth from the last day (not supported on Google Chrome operated by macos, Safari is recommended)
+9. Full raw data for self user analysis
 
 ## Dashboard presentation
 !['alt text'](/images/for_readme/GUI1.png)
