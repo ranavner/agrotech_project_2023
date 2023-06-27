@@ -10,6 +10,15 @@ sensors_csv = glob.glob(max(path_to_csv, key=os.path.getctime))[0]
 valve_threshold = 60
 #   _______________________________________________________________________________________________________
 
+# path_to_timelapse = glob.glob(max("images/videos/*.mp4", key=os.path.getctime))[0]
+try:
+    path_to_video_directory = glob.glob('videos/*')
+    latest_video_directory = glob.glob(max(path_to_video_directory, key=os.path.getctime))[0]
+    path_to_timelapse = open(latest_video_directory, 'rb')
+    video_bytes = path_to_timelapse.read()
+except:
+    pass
+
 try:
     path_to_image_directory = glob.glob('images/ESP32-CAM/*')
     latest_image_directory = glob.glob(max(path_to_image_directory, key=os.path.getctime))[0]
@@ -61,10 +70,12 @@ def main():
         page_icon="💧",
         layout="wide",
     )
+    
     # calling the background image function (insert .png file path)
     set_background('images/Background.png')
 
     st.title("💧 Real-Time-Field Dashboard")
+    
 
 
 #   _____________________________________PLACE HOLDERS___________________________________________________
@@ -118,6 +129,10 @@ def main():
     # creating the csv download button
     download_button_placeholder = st.empty()
     download_csv_button = download_button_placeholder
+
+    video_placeholder = st.empty()
+    video_button = video_placeholder
+
 
     # tmp table
     placeholder3 = st.empty()
@@ -206,12 +221,8 @@ def main():
         except:
             image_raw.write('no image to show')
             image_ana.write('no image to show')
-        # try:
-        #     image_container.image(image_now, width=720)
-        # except:
-        #     st.write('Error with camera module - No image presented')
 
-        # add buttons:
+    
         with download_csv_button.container():
             st.download_button(
             label="Download RAW as CSV",
@@ -222,12 +233,17 @@ def main():
             key=counter
             )
         data_4_table.write(sensors_df4)
+        
+        with video_button.container():
+            st.header('Growth Timelapse:')
+            st.video(video_bytes)
+    
 #   _______________________________________________________________________________________________________
 
     def define_data_frames():
         global sensors_df, sensors_df2, sensors_df3, sensors_df4, sensors_df5, motion_df, motion_last_seen, valve_df, csv_for_download
-        # sensors_df = pd.read_csv((sensors_csv))
-        sensors_df = pd.read_csv('csv/fixed2.csv')
+        sensors_df = pd.read_csv((sensors_csv))
+        # sensors_df = pd.read_csv('csv/fixed2.csv')
         csv_for_download = convert_sensors_df(sensors_df)
         sensors_df2 = sensors_df.drop(columns=['is_motion'])
         sensors_df3 = sensors_df2.dropna()

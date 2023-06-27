@@ -9,11 +9,16 @@ def download_image_repository_from_drive():
 def analyze_image():
     subprocess.Popen(["python", "code/image_color_seperation.py"])
 
+def create_timelapse():
+    subprocess.Popen(["python", "code/timelapse_generator.py"])
+
 
 def main():
-    download_image_repository_from_drive()
-    analyze_image()
-    time.sleep(300)
+    while True:
+        download_image_repository_from_drive()
+        analyze_image()
+        create_timelapse()
+        time.sleep(300)
 
 if __name__ == "__main__":
     main()
