@@ -34,7 +34,7 @@ Above the field, the camera module and the motion sensor are positioned such tha
 !['alt text'](/images/for_readme/IMG_6638.jpg)
 
 The camera module and the motion sensor are operated by 2 different esp, code for camera module can be found [here](code/ESP32_CAM_Send_Photo_to_Google_Drive.ino) and code for the motion sensor esp can be found [here](code/Motion_Sensor.ino)
-The timelapse creation code can be found [here](code/timelapse_generator.py)
+and the timelapse creation code can be found [here](code/timelapse_generator.py)
 
 ## Moisture sensors
 
