@@ -27,7 +27,7 @@ try:
     path_to_ana_directory = glob.glob('Analyzed_image/*')
     ana_image = glob.glob(max(path_to_ana_directory, key=os.path.getctime))[0]
 except:
-    pass
+    print('error with image ')
 #   _______________________________________________________________________________________________________
 
 @st.cache_data
@@ -131,7 +131,7 @@ def main():
     download_csv_button = download_button_placeholder
 
     video_placeholder = st.empty()
-    video_button = video_placeholder
+    video_container = video_placeholder
 
 
     # tmp table
@@ -222,7 +222,13 @@ def main():
             image_raw.write('no image to show')
             image_ana.write('no image to show')
 
-    
+
+        data_4_table.write(sensors_df4)
+        
+        with video_container.container():
+            st.header('Growth Timelapse:')
+            st.video(video_bytes)
+
         with download_csv_button.container():
             st.download_button(
             label="Download RAW as CSV",
@@ -232,12 +238,6 @@ def main():
             help='download the raw data',
             key=counter
             )
-        data_4_table.write(sensors_df4)
-        
-        with video_button.container():
-            st.header('Growth Timelapse:')
-            st.video(video_bytes)
-    
 #   _______________________________________________________________________________________________________
 
     def define_data_frames():
@@ -256,8 +256,10 @@ def main():
         valve_df.columns = valves_df_columns
         valve_df.mask(valve_df <= valve_threshold ,1, inplace=True)
         valve_df.mask(valve_df >= valve_threshold ,0, inplace=True)
-        
-        motion_last_seen = motion_df.loc[motion_df['is_motion'] == 1, 'TIMESTAMP'].iloc[-1]
+        try:
+            motion_last_seen = motion_df.loc[motion_df['is_motion'] == 1, 'TIMESTAMP'].iloc[-1]
+        except:
+            motion_last_seen = 'No motion detected today'
 #   _______________________________________________________________________________________________________
     counter = 0
     while True:
@@ -267,13 +269,12 @@ def main():
         time.sleep(1)
 #   _______________________________________________________________________________________________________
 
-# try:
-#     main()
-# except:
-#     col1, col2, col3 = st.columns(3)
+try:
+    main()
+except IndexError:
+    col1, col2, col3 = st.columns(3)
 
-#     with col2:
-#         st.image('images/waiting_image_2.jpg', use_column_width=False)
-#         st.title("Collecting field data........")
-
-main()
+    with col2:
+        st.image('images/waiting_image_2.jpg', use_column_width=False)
+        st.title("Collecting field data........")
+        st.write("Try again in a few moments")

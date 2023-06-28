@@ -26,7 +26,7 @@ def create_csv_header(file_name, header):
 
 def run_sub_process():
      #   running subprocess in the background
-    subprocess.Popen(["python3", "Download_image_repository.py"])   # runs a script that downloads the image repository every 6 seconds
+    subprocess.Popen(["python3", "code/Download_image_repository.py"])   # runs a script that downloads the image repository every 6 seconds
     subprocess.Popen(["streamlit", "run", streamlit_script])     # running the streamlit server by terminal
 
 #   _______________________________________________________________________________________________________

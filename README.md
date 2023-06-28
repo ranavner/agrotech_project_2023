@@ -30,7 +30,8 @@ Full code can be found in [here](code/irrigation_esp.ino)
 
 ## Camera and Motion sensor
 
-Above the field, the camera module and the motion sensor are positioned such that it can give a 'drone like' view of the whole growth
+Above the field, the camera module and the motion sensor are positioned such that it can give a 'drone like' view of the whole growth.
+
 !['alt text'](/images/for_readme/IMG_6638.jpg)
 
 The camera module and the motion sensor are operated by 2 different esp, code for camera module can be found [here](code/ESP32_CAM_Send_Photo_to_Google_Drive.ino) and code for the motion sensor esp can be found [here](code/Motion_Sensor.ino)
