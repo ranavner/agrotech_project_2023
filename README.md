@@ -38,7 +38,7 @@ The camera module and the motion sensor are operated by 2 different esp, code fo
 and the timelapse creation code can be found [here](code/timelapse_generator.py)
 
 Example video of the timelapse:
-https://github.com/ranavner/real_time_dashboard/assets/127611730/60366b11-49d2-45d6-8416-e36366fb50a6
+https://github.com/ranavner/real_time_dashboard/assets/127611730/60366b11-49d2-45d6-8416-e36366fb50a6.mp4
 
 ## Moisture sensors
 
