@@ -23,7 +23,7 @@ All the data is sent in real-time into a Streamlit app that can be accessed from
 The app platform was created using the Streamlit library, the full code can be found [here](code/streamlit_app.py)
 The app features full real-time data presentation, plus a visual presentation of the moisture, temperature, VPD, and data table.
 Furthermore, you can watch the field raw photo, the analyzed photo, and the timelapse created with the latest images downloaded (automatically).
-(for data analysis, the app also features a download button for the raw CSV including all data collected by the sensors (moisture, tmp, VPD, and motion).
+For data analysis, the app also features a download button for the raw CSV including all data collected by the sensors (moisture, tmp, VPD, and motion).
 
 ## Full system
 !['alt text'](/images/for_readme/IMG_6651.jpg)
